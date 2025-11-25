@@ -1,4 +1,5 @@
 package com.sat.tmf.movietkt.controller;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +26,8 @@ public class TheaterController {
         model.addAttribute("contentPage", "/WEB-INF/views/admin/adminTheaters.jsp");
         return "layout/layout";
     }
+    
+   
 
     // Show add theater form
     @GetMapping("/add")
@@ -37,9 +40,13 @@ public class TheaterController {
 
     // Handle create theater
     @PostMapping("/add")
-    public String createTheater(@ModelAttribute Theater theater) {
+    public String createTheater(@ModelAttribute Theater theater,Model model) {
         theaterService.createTheater(theater);
+        List<Theater> theaterlist =theaterService.findAll();
+        System.out.println(theaterlist.size());
+        model.addAttribute("theaters", theaterlist);
         return "redirect:/admin/theaters";
+        
     }
 
     // Show edit form
@@ -75,4 +82,3 @@ public class TheaterController {
         return "layout/layout";
     }
 }
-

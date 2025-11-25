@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-4">
@@ -13,7 +14,6 @@
             <p>${movie.description}</p>
         </div>
     </div>
-
     <hr/>
 
     <h4 class="mt-4">Available Shows</h4>

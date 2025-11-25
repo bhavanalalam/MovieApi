@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="container mt-4 text-center">
     <h2> Booking Confirmed!</h2>
     <p>Your booking ID: <strong>${booking.id}</strong></p>

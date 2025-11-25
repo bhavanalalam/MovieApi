@@ -20,7 +20,7 @@ public class TemplateSeat {
 
     private BigDecimal price;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "seat_template_id", nullable = false)
     private SeatTemplate seatTemplate;
 

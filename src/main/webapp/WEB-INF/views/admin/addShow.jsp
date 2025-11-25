@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="container mt-4">
     <h2>${pageTitle}</h2>
     <form method="post" action="${pageContext.request.contextPath}/admin/shows/add">
@@ -11,7 +12,6 @@
                 </c:forEach>
             </select>
         </div>
-
         <div class="mb-3">
             <label>Seat Template</label>
             <select name="seatTemplate.id" class="form-select" required>

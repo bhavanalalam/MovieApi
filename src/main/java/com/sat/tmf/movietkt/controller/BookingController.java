@@ -35,7 +35,7 @@ public class BookingController {
         Show show = showService.findById(showId);
         model.addAttribute("show", show);
         model.addAttribute("templateSeats", seatService.findByTemplateId(show.getSeatTemplate().getId()));
-        model.addAttribute("contentPage", "/WEB-INF/views/user/selectSeats.jsp");
+        model.addAttribute("contentPage", "/WEB-INF/views/selectSeats.jsp");
         model.addAttribute("pageTitle", "Select Seats for " + show.getMovie().getTitle());
         return "layout/layout";
     }
@@ -49,7 +49,7 @@ public class BookingController {
         Show show = showService.findById(showId);
         Booking booking = bookingService.holdSeats(user, show, seatIds);
         model.addAttribute("booking", booking);
-        model.addAttribute("contentPage", "/WEB-INF/views/user/confirmBooking.jsp");
+        model.addAttribute("contentPage", "/WEB-INF/views/confirmBooking.jsp");
         model.addAttribute("pageTitle", "Confirm Booking");
         return "layout/layout";
     }
@@ -59,7 +59,7 @@ public class BookingController {
     public String confirmBooking(@RequestParam Integer bookingId, Model model) {
         Booking booking = bookingService.confirmBooking(bookingId);
         model.addAttribute("booking", booking);
-        model.addAttribute("contentPage", "/WEB-INF/views/user/bookingSuccess.jsp");
+        model.addAttribute("contentPage", "/WEB-INF/views/bookingSuccess.jsp");
         model.addAttribute("pageTitle", "Booking Confirmed");
         return "layout/layout";
     }
@@ -70,7 +70,7 @@ public class BookingController {
         User user = userService.findByUsername(principal.getName());
         List<Booking> bookings = bookingService.findByUser(user);
         model.addAttribute("bookings", bookings);
-        model.addAttribute("contentPage", "/WEB-INF/views/user/bookingHistory.jsp");
+        model.addAttribute("contentPage", "/WEB-INF/views/bookingHistory.jsp");
         model.addAttribute("pageTitle", "My Bookings");
         return "layout/layout";
     }

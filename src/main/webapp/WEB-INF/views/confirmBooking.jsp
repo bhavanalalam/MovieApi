@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="container mt-4">
     <h2>Confirm Booking</h2>
     <p>Movie: <strong>${booking.show.movie.title}</strong></p>

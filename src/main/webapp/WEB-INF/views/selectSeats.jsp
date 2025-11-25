@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="container mt-4">
     <h2>${pageTitle}</h2>
     <form id="bookingForm" method="post" action="${pageContext.request.contextPath}/booking/hold">
@@ -14,18 +15,6 @@
     </form>
 </div>
 
-<script>
-    const selectedSeats = new Set();
-    document.querySelectorAll('.seat').forEach(seat => {
-        seat.addEventListener('click', () => {
-            seat.classList.toggle('selected');
-            const id = seat.dataset.id;
-            if (selectedSeats.has(id)) selectedSeats.delete(id);
-            else selectedSeats.add(id);
-            document.getElementById('seatIds').value = Array.from(selectedSeats);
-        });
-    });
-</script>
 
 <style>
     .seat { width: 40px; height: 40px; border-radius: 4px; text-align: center; line-height: 40px; cursor: pointer; }
